@@ -1,11 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-
-void ft_bzero(void *src, unsigned int n);
-void *ft_memmove(void *dest, void *src, unsigned int n);
-char *ft_strchr(char *str, int search_char);
-void *ft_memchr(void *str, unsigned int c, unsigned int n);
+#include "libft.h"
 
 int main() {
 	printf("---ft_bzero\n");
@@ -29,7 +25,16 @@ int main() {
 	printf("---ft_memchr\n");
 	char string4[] = "wiertareczka";
 	printf("%s\n", string4);
-	printf("t: %s\n", ft_memchr(string4, 't', 6));
-	printf("x: %s\n", ft_memchr(string4, 'x', 6));
+	printf("t: %s\n", (char *)ft_memchr(string4, 't', 6));
+	printf("x: %s\n", (char *)ft_memchr(string4, 'x', 6));
+
+	printf("---ft_strrchr\n");
+	char string5[] = "mamba";
+		printf("%s\n", string5);
+	printf("m: %s\n", ft_strrchr(string5, 'm'));
+	printf("a: %s\n", ft_strrchr(string5, 'a'));
+	printf("x: %s\n", ft_strrchr(string5, 'x'));
+
+	printf("---memcmp\n");
 	return 0;
 }

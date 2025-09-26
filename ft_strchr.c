@@ -1,3 +1,5 @@
+#include <stdlib.h>
+
 char *ft_strchr(char *str, int search_char) {
 	char *p;
 
@@ -8,5 +10,5 @@ char *ft_strchr(char *str, int search_char) {
 			return (p);
 		p++;
 	}
-	return (str);
+	return (NULL);
 }
