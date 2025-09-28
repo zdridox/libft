@@ -1,27 +1,27 @@
 /******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mzdrodow <mzdrodow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 13:12:31 by mzdrodow          #+#    #+#             */
-/*   Updated: 2025/09/26 17:51:00 by mzdrodow         ###   ########.fr       */
+/*   Updated: 2025/09/28 18:42:47 by mzdrodow         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 //#include <stdio.h>
 
-char	*ft_strlowcase(char *str)
+char	*ft_toupper(char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] >= 65 && str[i] <= 90)
+		if (str[i] >= 97 && str[i] <= 122)
 		{
-			str[i] = str[i] + 32;
+			str[i] = str[i] - 32;
 		}
 		i++;
 	}
@@ -31,6 +31,6 @@ char	*ft_strlowcase(char *str)
 //int main() {
 //	char testStr[] = "TesT6";
 //
-//	printf("%s", ft_strlowcase(testStr));
+//	printf("%s", ft_strupcase(testStr));
 //	return 0;
 //}
