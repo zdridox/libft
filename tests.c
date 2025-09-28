@@ -55,6 +55,12 @@ int main() {
 	{
 		printf("%d\n", arr[i]);
 	}
+
+	printf("---ft_substr\n");
+	char string7[] = "budynek";
+	char *str = ft_substr(string7, 2, 3);
+	printf("%s\n", string7);
+	printf("2,3: %s\n", str);
 	
 	return 0;
 }

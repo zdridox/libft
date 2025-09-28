@@ -6,10 +6,13 @@ void *ft_calloc(size_t nitems, size_t size) {
 
     i = 0;
     p = malloc(nitems * size);
-    while (i < nitems)
+    if(!p) {
+        return(NULL);
+    }
+
+    while(i < nitems * size)
     {
-        p[i] = 0;
-        i++;
+        p[i++] = 0;
     }
     return((void *)p);
 }
