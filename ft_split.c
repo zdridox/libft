@@ -30,7 +30,7 @@ static char **array_allocate(char const *s, char c) {
 	while(*p != '\0') {
 		if((char)*p != c)
 			i++;
-		if(((char)*p == c)) {
+		if((char)*p == c) {
 			array[index] = malloc(i + 1);
 			i = 0;
 			index++;
