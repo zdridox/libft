@@ -12,7 +12,8 @@ char *ft_strrchr(char *str, int search_char) {
 			g = p;
 		p++;
 	}
-    if (g != NULL)
-        return (g);
+    if (g != NULL) {
+    	return (g);
+    }
 	return (NULL);
 }
