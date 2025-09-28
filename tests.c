@@ -35,6 +35,18 @@ int main() {
 	printf("a: %s\n", ft_strrchr(string5, 'a'));
 	printf("x: %s\n", ft_strrchr(string5, 'x'));
 
-	printf("---memcmp\n");
+	printf("---ft_memcmp\n");
+	printf("%d\n", ft_memcmp("abcde", "abcde", 5));
+	printf("%d\n", ft_memcmp("abcde", "Abcde", 5));
+	printf("%d\n", ft_memcmp("Abcde", "abcde", 5));
+
+	printf("---ft_split\n");
+	char string6[] = "pan marek usiadl se na laweczce klasa benc";
+	char **split_arr;
+	split_arr = ft_split(string6, ' ');
+	printf("%s\n", string6);
+	for(int i = 0; split_arr[i] != NULL; i++) {
+		printf("%s\n", split_arr[i]);
+	}
 	return 0;
 }
