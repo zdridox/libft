@@ -48,5 +48,13 @@ int main() {
 	for(int i = 0; split_arr[i] != NULL; i++) {
 		printf("%s\n", split_arr[i]);
 	}
+
+	printf("---ft_calloc\n");
+	int *arr = ft_calloc(5, sizeof(int));
+	for (int i = 0; i < 5; i++)
+	{
+		printf("%d\n", arr[i]);
+	}
+	
 	return 0;
 }

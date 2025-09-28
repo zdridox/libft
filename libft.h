@@ -8,3 +8,4 @@ char *ft_strrchr(char *str, int search_char);
 int ft_memcmp(void * p1, void * p2, size_t size);
 int	ft_strlen(char *str);
 char **ft_split(char const *s, char c);
+void *ft_calloc(size_t nitems, size_t size);
