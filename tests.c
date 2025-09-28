@@ -62,5 +62,7 @@ int main() {
 	printf("%s\n", string7);
 	printf("2,3: %s\n", str);
 	
+	printf("---ft_strjoin\n");
+	printf("marek, wiertarek: %s\n", ft_strjoin("marek", "wiertarek"));
 	return 0;
 }
