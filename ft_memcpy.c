@@ -1,11 +1,18 @@
-void *ft_memcpy(void *dest, void *src, unsigned int n) {
+#include <stdlib.h>
+
+void *ft_memcpy(void *dst,const void *src, size_t n) {
 	unsigned char *d;
 	unsigned char *s;
 
-	s = src;
-	d = dest;
+	s = (unsigned char *)src;
+	d = (unsigned char *)dst;
 
-	while(n-- > 0)
+    if (dst == (void *)0 && src == (void *)0) {
+		return (dst);
+	}
+	while(n > 0) {
 		*d++ = *s++;
-	return(dest);
+		n--;
+	}
+	return(dst);
 }

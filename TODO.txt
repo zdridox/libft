@@ -1,4 +1,2 @@
-consty na src
-size_t nie unsigned int na size
 atoi fix
 HEADERY

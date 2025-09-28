@@ -1,38 +1,28 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mzdrodow <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mzdrodow <mzdrodow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 17:28:23 by mzdrodow          #+#    #+#             */
-/*   Updated: 2025/07/09 06:57:29 by mzdrodow         ###   ########.fr       */
+/*   Updated: 2025/09/28 21:34:56 by mzdrodow         ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 //#include <stdio.h>
+#include <stdlib.h>
+#include "libft.h"
 
-int	str_length(char *str)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	int	i;
+	size_t	i;
+	size_t	dest_len;
+	size_t	src_len;
 
 	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
-{
-	unsigned int	i;
-	unsigned int	dest_len;
-	unsigned int	src_len;
-
-	i = 0;
-	dest_len = str_length(dest);
-	src_len = str_length(src);
+	dest_len = ft_strlen(dest);
+	src_len = ft_strlen(src);
 	if (dest_len >= size)
 		return (src_len + size);
 	while ((src[i] != '\0') && (i + dest_len) < size - 1)

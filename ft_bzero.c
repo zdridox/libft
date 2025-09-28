@@ -1,4 +1,6 @@
-void ft_bzero(void *src, unsigned int n) {
+#include <stdlib.h>
+
+void ft_bzero(void *src, size_t n) {
 	unsigned char *c;
 
 	c = src;

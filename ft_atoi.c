@@ -1,18 +1,18 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mzdrodow <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mzdrodow <mzdrodow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/11 02:46:28 by mzdrodow          #+#    #+#             */
-/*   Updated: 2025/07/11 03:09:27 by mzdrodow         ###   ########.fr       */
+/*   Updated: 2025/09/28 21:47:05 by mzdrodow         ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 //#include <stdio.h>
 
-int	is_numeric(char c)
+static int	is_numeric(char c)
 {
 	if (c >= 48 && c <= 57)
 		return (1);
@@ -23,7 +23,7 @@ int	is_numeric(char c)
 	return (0);
 }
 
-int	str_len(char *str)
+static int	str_len(char *str)
 {
 	int	i;
 	int	j;
@@ -45,7 +45,7 @@ int	str_len(char *str)
 	return (j);
 }
 
-int	multi(int a, int times)
+static int	multi(int a, int times)
 {
 	int	rs;
 	int	i;
@@ -60,7 +60,7 @@ int	multi(int a, int times)
 	return (rs);
 }
 
-void	set_vars_to_zero_stupid(int *a, int *b, int *c, int *d)
+static void	set_vars_to_zero_stupid(int *a, int *b, int *c, int *d)
 {
 	*a = 0;
 	*b = 0;
@@ -68,7 +68,7 @@ void	set_vars_to_zero_stupid(int *a, int *b, int *c, int *d)
 	*d = 0;
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	rs;
 	int	i;
@@ -86,7 +86,7 @@ int	ft_atoi(char *str)
 			minuses++;
 		if (is_numeric(str[i]) == 1)
 		{
-			rs += multi(str[i] - 48, str_len(str) - j - 1);
+			rs += multi(str[i] - 48, str_len((char *)str) - j - 1);
 			j++;
 		}
 		i++;

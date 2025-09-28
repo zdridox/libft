@@ -1,19 +1,19 @@
 #include <stdlib.h>
 
-char *ft_strrchr(char *str, int search_char) {
-	char *p;
+
+char *ft_strrchr(const char *s, int search_char) {
+	const char *p;
     char *g;
 
-	p = str;
+	p = s;
     g = NULL;
 
-	while(*p != '\0') {
-		if (*p == search_char)
-			g = p;
+	while(*p) {
+		if (*p == (char)search_char)
+			g = (char *)p;
 		p++;
 	}
-    if (g != NULL) {
-    	return (g);
-    }
-	return (NULL);
+	if (*p == (char)search_char)
+		g = (char *)p;
+    return (g);
 }

@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-void *ft_memchr(void *str, unsigned int c, unsigned int n) {
+void *ft_memchr(void *str, unsigned int c, size_t n) {
 	unsigned char *p;
 
 	p = str;

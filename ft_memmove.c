@@ -1,6 +1,8 @@
-void *ft_memmove(void *dest, void *src, unsigned int n) {
+#include <stdlib.h>
+
+void *ft_memmove(void *dest, const void *src, size_t n) {
     unsigned char *d = dest;
-    unsigned char *s = src;
+    const unsigned char *s = src;
 
     if (d < s) {
         while (n--)

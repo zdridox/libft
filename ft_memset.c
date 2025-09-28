@@ -1,5 +1,6 @@
+#include <stdlib.h>
 
-void *ft_memset(void *ptr, unsigned int c, unsigned int n) {
+void *ft_memset(void *ptr, unsigned int c, size_t n) {
 	unsigned char *p;
 
 	p = ptr;
