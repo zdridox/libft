@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include <stdio.h>
+//#include <stdio.h>
 
 static int word_counter(char const *s, char c) {
 	const char *p;
@@ -88,7 +88,7 @@ char **ft_split(char const *s, char c) {
 	return(array);
 }
 
-
+/*
 int main() {
 	const char string[] = "      marek     wiertarek    zajebal          wiadro firanek     aaaaaa   ";
 	char **arr;
@@ -101,3 +101,4 @@ int main() {
 	}
 	return 0;
 }
+*/
