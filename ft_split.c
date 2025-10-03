@@ -1,82 +1,96 @@
 #include <stdlib.h>
-//#include <stdio.h>
+#include <stdio.h>
 
 static int word_counter(char const *s, char c) {
 	const char *p;
 	int word_count;
+	int in_word;
 
 	p = s;
-	word_count = 1;
+	in_word = 0;
+	word_count = 0;
 	while(*p != '\0') {
-		if ((char)*p == c)
+		if(*p != c)
+			in_word = 1;
+		if(*p == c && in_word == 1) {
 			word_count++;
+			in_word = 0;
+		}
 		p++;
 	}
-	//printf("word count: %d\n", word_count);
+	if(in_word == 1)
+		word_count++;
 	return(word_count);
 }
+
 
 static char **array_allocate(char const *s, char c) {
 	char **array;
 	const char *p;
 	int i;
 	int index;
-	int word_count;
+	int in_word;
 
+	p = s;
 	i = 0;
 	index = 0;
-	p = s;
-	word_count = word_counter(s, c);
-	array = malloc((word_count + 1) * sizeof(char *));
+	in_word = 0;
+	array = malloc((word_counter(s, c) + 1) * sizeof(char *));
 	while(*p != '\0') {
-		if(index >= word_count)
-			break;
-		if((char)*p != c)
-			i++;
-		if((char)*p == c) {
+		if(*p == c && in_word == 1) {
 			array[index] = malloc(i + 1);
-			//printf("malloc at index: %d with size: %d\n", index, i + 1);
-			i = 0;
 			index++;
+			i = 0;
+			in_word = 0;
 		}
+		if(*p != c)
+			in_word = 1;
+		if(in_word == 1)
+			i++;
 		p++;
 	}
-	if(word_count == 1 || index == word_count - 1) {
+	if(in_word == 1) {
 		array[index] = malloc(i + 1);
-		//printf("malloc at index: %d with size: %d\n", index, i + 1);
 	}
-	return(array);
+	return (array);
 }
 
 char **ft_split(char const *s, char c) {
 	char **array;
 	int index;
 	int i;
+	int in_word;
 	const char *p;
 
 	p = s;
 	index = 0;
 	i = 0;
+	in_word = 0;
 	array = array_allocate(s, c);
 	while(*p != '\0') {
-		if((char)*p == c) {
+		if(*p == c && in_word == 1) {
 			array[index][i] = '\0';
-			i = 0;
 			index++;
-			p++;
+			i = 0;
+			in_word = 0;
 		}
-		array[index][i] = (char)*p;
-		i++;
+		if(*p != c)
+			in_word = 1;
+		if(in_word == 1) {
+			array[index][i] = *p;
+			i++;
+		}
 		p++;
 	}
-	array[index][i] = '\0';
-	array[index + 1] = NULL;
+	if(in_word == 1)
+		array[index++][i] = '\0';
+	array[index] = NULL;
 	return(array);
 }
 
-/*
+
 int main() {
-	const char string[] = "marek wiertarek zajebal wiadro firanek";
+	const char string[] = "      marek     wiertarek    zajebal          wiadro firanek     aaaaaa   ";
 	char **arr;
 
 	arr = ft_split(string, ' ');
@@ -87,4 +101,3 @@ int main() {
 	}
 	return 0;
 }
-*/

@@ -4,6 +4,8 @@ void *ft_calloc(size_t nitems, size_t size) {
     unsigned char *p;
     size_t i;
 
+    if(nitems != 0 && nitems * size / nitems != size)
+        return(NULL);
     i = 0;
     p = malloc(nitems * size);
     if(!p) {

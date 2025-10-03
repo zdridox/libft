@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include "libft.h"
 //#include <stdio.h>
 
 char *ft_substr(char const *s, unsigned int start, size_t len) {
@@ -6,6 +7,12 @@ char *ft_substr(char const *s, unsigned int start, size_t len) {
     char *b;
     char *buffer;
 
+    if(!s)
+        return (NULL);
+    if(start > ft_strlen(s))
+        return (ft_memset(malloc(1), 0, 1));
+    if(len > ft_strlen(s) - start)
+        len = ft_strlen(s) - start;
     p = s;
     p += start;
     buffer = malloc(len + 1);
