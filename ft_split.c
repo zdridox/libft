@@ -55,9 +55,7 @@ static char	**array_allocate(char const *s, char c)
 		p++;
 	}
 	if (in_word == 1)
-	{
 		array[index] = malloc(i + 1);
-	}
 	return (array);
 }
 

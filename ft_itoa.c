@@ -41,12 +41,12 @@ char *ft_itoa(int n) {
 	int size;
 
 	i = 0;
+	if(n == 0)
+		return (ft_strdup("0"));
+	if(n == -2147483648)
+		return (ft_strdup("-2147483648"));
 	size = digit_sum(n);
 	result = malloc(size + 1);
-	if(n == 0)
-		return ("0");
-	if(n == -2147483648)
-		return ("-2147483648");
 	if(n < 0) {
 		result[size - 1] = '-';
 		n *= -1;
