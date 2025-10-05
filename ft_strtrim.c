@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include "libft.h"
 //#include <stdio.h>
 
 static int check_inset(char const *set, char c) {
@@ -13,45 +14,65 @@ static int check_inset(char const *set, char c) {
 	return (0);
 }
 
-static int get_trimmed_size(char const *s1, char const *set) {
-	char const *p;
-	int size;
-
-	size = 0;
-	p = s1;
-	while(*p) {
-		if(check_inset(set, *p) == 0)
-			size++;
-		p++;
-	}
-	return(size);
-}
-
-char *ft_strtrim(char const *s1, char const *set) {
-	char *result;
+static int get_start(char const *s1, char const *set) {
 	int i;
 
 	i = 0;
-	result = malloc(get_trimmed_size(s1, set) + 1);
-	while(*s1) {
-		if(check_inset(set, *s1) == 0) {
-			result[i] = *s1;
-			i++;
-		}
-		s1++;
+	while(s1[i]) {
+		if(check_inset(set, s1[i]) == 0)
+			return (i);
+		i++;
 	}
-	result[i] = '\0';
-	return(result);
+	return (0);
+}
+
+static int get_end(char const *s1, char const *set) {
+	int i;
+
+	i = ft_strlen(s1) - 1;
+	while (i >= 0)
+	{
+		if(check_inset(set, s1[i]) == 0)
+			return (i);
+		i--;
+	}
+	return (-1);
+}
+
+
+char *ft_strtrim(char const *s1, char const *set) {
+	char *res;
+	int start;
+	int end;
+	int i;
+
+	i = 0;
+	start = get_start(s1, set);
+	end = get_end(s1, set);
+	if(end == start) {
+		res = malloc(2);
+		res[0] = s1[start];
+		res[1] = '\0';
+		return (res);
+	}
+	if(end < start)
+		return (ft_strdup(""));
+	res = malloc(end - start + 2);
+	while(i < (end - start + 1)) {
+		res[i] = s1[start + i];
+		i++;
+	}
+	res[i] = '\0';
+	return (res);
 }
 
 /*
 int main() {
+	char str[] = "aaaamarekeeeee";
+	char set[] = "ae";
 
-	printf("abcd d: %d\n", check_inset("abcd", 'd'));
-	printf("abcd x: %d\n", check_inset("abcd", 'x'));
-	printf("marek wiertarek, mkr size: %d\n", get_trimmed_size("marek wiertarek", "mkr"));
-	printf("ft_strim: marek wiertarek, mkr: %s\n", ft_strtrim("marek wiertarek", "mkr"));
-
-	return 0;
+	printf("%s\n", ft_strtrim(str, set));
+	printf("%s\n", ft_strtrim("   xxx   xxx", " x"));
+	printf("%s\n", ft_strtrim("abcdba", "acb"));
 }
 */
