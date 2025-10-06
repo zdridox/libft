@@ -1,4 +1,15 @@
-//#include <stdio.h>
+/******************************************************************************/
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mzdrodow <mzdrodow@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/06 01:58:47 by mzdrodow          #+#    #+#             */
+/*   Updated: 2025/10/06 01:59:25 by mzdrodow         ###   ########.fr       */
+/*                                                                            */
+/******************************************************************************/
+
 #include <stdlib.h>
 
 static int	word_counter(char const *s, char c)
@@ -94,27 +105,3 @@ char	**ft_split(char const *s, char c)
 		array[index++][i] = '\0';
 	return (array[index] = NULL, array);
 }
-
-/*
-int	main(void)
-{
-	const char	string[] = "      marek     wiertarek    zajebal          wiadro firanek     aaaaaa   ";
-	const char	string2[] = "      marek     wiertarek    zajebal          wiadro firanek     aaaaaa";
-	char		**arr;
-	char		**arr2;
-
-	arr = ft_split(string, ' ');
-	arr2 = ft_split(string2, ' ');
-	printf("string: '%s'\n", string);
-	for (int i = 0; arr[i] != NULL; i++)
-	{
-		printf("%s\n", arr[i]);
-	}
-	printf("string2: '%s'\n", string2);
-	for (int i = 0; arr2[i] != NULL; i++)
-	{
-		printf("%s\n", arr2[i]);
-	}
-	return (0);
-}
-*/

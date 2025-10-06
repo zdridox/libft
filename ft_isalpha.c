@@ -6,10 +6,11 @@
 /*   By: mzdrodow <mzdrodow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 17:53:22 by mzdrodow          #+#    #+#             */
-/*   Updated: 2025/09/22 18:09:16 by mzdrodow         ###   ########.fr       */
+/*   Updated: 2025/10/06 01:53:51 by mzdrodow         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
-int ft_isalpha(char a){
-    return ((a >= 'a' && a <= 'z') || (a >= 'A' && a <= 'Z'));
+int	ft_isalpha(char a)
+{
+	return ((a >= 'a' && a <= 'z') || (a >= 'A' && a <= 'Z'));
 }

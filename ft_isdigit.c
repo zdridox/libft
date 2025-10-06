@@ -6,10 +6,11 @@
 /*   By: mzdrodow <mzdrodow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 20:45:55 by mzdrodow          #+#    #+#             */
-/*   Updated: 2025/09/22 20:45:58 by mzdrodow         ###   ########.fr       */
+/*   Updated: 2025/10/06 01:54:27 by mzdrodow         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
-int	ft_isdigit(char a) {
-    return (a >= '0' && a <= '9');
-}	
+int	ft_isdigit(char a)
+{
+	return (a >= '0' && a <= '9');
+}

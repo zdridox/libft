@@ -1,8 +1,18 @@
+/******************************************************************************/
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mzdrodow <mzdrodow@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/06 01:54:39 by mzdrodow          #+#    #+#             */
+/*   Updated: 2025/10/06 01:55:06 by mzdrodow         ###   ########.fr       */
+/*                                                                            */
+/******************************************************************************/
 
-int    ft_isprint(int c)
+int	ft_isprint(int c)
 {
-    /* check if c is between decimal 32 and decimal 126 (inclusive) */
-    if (c >= 32 && c <= 126)
-        return (c); // if we reach this point, c will be a non-zero value.
-    return (0);
+	if (c >= 32 && c <= 126)
+		return (c);
+	return (0);
 }

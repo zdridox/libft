@@ -1,15 +1,29 @@
-#include <unistd.h>
+/******************************************************************************/
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mzdrodow <mzdrodow@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/06 01:58:08 by mzdrodow          #+#    #+#             */
+/*   Updated: 2025/10/06 01:58:14 by mzdrodow         ###   ########.fr       */
+/*                                                                            */
+/******************************************************************************/
+
 #include "libft.h"
+#include <unistd.h>
 
-void ft_putnbr_fd(int n, int fd) {
-    char *nbr;
-    char *ptr;
+void	ft_putnbr_fd(int n, int fd)
+{
+	char	*nbr;
+	char	*ptr;
 
-    nbr = ft_itoa(n);
-    ptr = nbr;
-    while(*ptr) {
-        write(fd, &*ptr, 1);
-        ptr++;
-    }
-    free(nbr);
+	nbr = ft_itoa(n);
+	ptr = nbr;
+	while (*ptr)
+	{
+		write(fd, &*ptr, 1);
+		ptr++;
+	}
+	free(nbr);
 }

@@ -6,14 +6,13 @@
 /*   By: mzdrodow <mzdrodow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 13:12:31 by mzdrodow          #+#    #+#             */
-/*   Updated: 2025/09/28 21:05:07 by mzdrodow         ###   ########.fr       */
+/*   Updated: 2025/10/06 02:03:34 by mzdrodow         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
-int    ft_toupper(int c)
+int	ft_toupper(int c)
 {
-    if (c >= 97 && c <= 122)
-        return (c - 32);
-    return (c);
+	if (c >= 97 && c <= 122)
+		return (c - 32);
+	return (c);
 }
-

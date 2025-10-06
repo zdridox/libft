@@ -6,15 +6,13 @@
 /*   By: mzdrodow <mzdrodow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 13:12:31 by mzdrodow          #+#    #+#             */
-/*   Updated: 2025/09/28 21:06:28 by mzdrodow         ###   ########.fr       */
+/*   Updated: 2025/10/06 02:03:24 by mzdrodow         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
-
-
-int    ft_tolower(int c)
+int	ft_tolower(int c)
 {
-    if (c >= 65 && c <= 90)
-        return (c + 32);
-    return (c);
+	if (c >= 65 && c <= 90)
+		return (c + 32);
+	return (c);
 }

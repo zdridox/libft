@@ -1,9 +1,22 @@
+/******************************************************************************/
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mzdrodow <mzdrodow@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/06 01:47:24 by mzdrodow          #+#    #+#             */
+/*   Updated: 2025/10/06 01:49:00 by mzdrodow         ###   ########.fr       */
+/*                                                                            */
+/******************************************************************************/
+
 #include <stdlib.h>
 
-void ft_bzero(void *src, size_t n) {
-	unsigned char *c;
+void	ft_bzero(void *src, size_t n)
+{
+	unsigned char	*c;
 
 	c = src;
-	while(n-- > 0)
+	while (n-- > 0)
 		*c++ = '\0';
 }

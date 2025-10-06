@@ -6,12 +6,12 @@
 /*   By: mzdrodow <mzdrodow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 17:28:23 by mzdrodow          #+#    #+#             */
-/*   Updated: 2025/10/03 21:03:43 by mzdrodow         ###   ########.fr       */
+/*   Updated: 2025/10/06 02:00:40 by mzdrodow         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
-#include <stdlib.h>
 #include "libft.h"
+#include <stdlib.h>
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
