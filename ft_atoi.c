@@ -24,9 +24,9 @@ int ft_atoi(const char *str) {
 	modulator = 1;
 	while(*str && is_space(*str))
 		str++;
-	if((*str == '-' || *str == '+') && !ft_isdigit(*(str + 1)))
-		return (0);
 	if(*str == '-' || *str == '+') {
+		if(!ft_isdigit(*(str + 1)))
+			return (0);
 		if(*str == '-')
 			modulator = -1;
 		str++;
