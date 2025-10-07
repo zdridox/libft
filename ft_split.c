@@ -6,7 +6,7 @@
 /*   By: mzdrodow <mzdrodow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 01:58:47 by mzdrodow          #+#    #+#             */
-/*   Updated: 2025/10/06 01:59:25 by mzdrodow         ###   ########.fr       */
+/*   Updated: 2025/10/07 22:09:11 by mzdrodow         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -76,30 +76,28 @@ char	**ft_split(char const *s, char c)
 	int			index;
 	int			i;
 	int			in_word;
-	const char	*p;
 
-	p = s;
 	index = 0;
 	i = 0;
 	in_word = 0;
 	array = array_allocate(s, c);
-	while (*p != '\0')
+	while (*s != '\0')
 	{
-		if (*p == c && in_word == 1)
+		if (*s == c && in_word == 1)
 		{
 			array[index][i] = '\0';
 			index++;
 			i = 0;
 			in_word = 0;
 		}
-		if (*p != c)
+		if (*s != c)
 			in_word = 1;
 		if (in_word == 1)
 		{
-			array[index][i] = *p;
+			array[index][i] = *s;
 			i++;
 		}
-		p++;
+		s++;
 	}
 	if (in_word == 1)
 		array[index++][i] = '\0';

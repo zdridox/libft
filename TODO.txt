@@ -1,1 +1,4 @@
 headery
+wyjebac testery
+wyjebac linijki testeru z makefile
+split wyjebac in word i sprawdzac czy i > 0 

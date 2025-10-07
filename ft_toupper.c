@@ -6,13 +6,13 @@
 /*   By: mzdrodow <mzdrodow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 13:12:31 by mzdrodow          #+#    #+#             */
-/*   Updated: 2025/10/07 18:32:40 by mzdrodow         ###   ########.fr       */
+/*   Updated: 2025/10/07 18:46:05 by mzdrodow         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
-#include "libft.h"
-
 int	ft_toupper(int c)
 {
-	return (c -= 32 * ft_isalpha(c), c);
+	if (c >= 97 && c <= 122)
+		return (c - 32);
+	return (c);
 }
