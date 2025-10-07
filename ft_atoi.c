@@ -12,106 +12,31 @@
 
 #include "libft.h"
 
-int	is_numeric(char c)
-{
-	if (c >= 48 && c <= 57)
-		return (1);
-	if ((c >= 9 && c <= 13) || c == ' ')
-		return (2);
-	if (c == '-' || c == '+')
-		return (2);
-	return (0);
+static int is_space(char a) {
+	return (a == 9 || a == 10 || a == 11 || a == 12 || a == 13 || a == 32);
 }
 
-int	str_len(char *str)
-{
-	int	i;
-	int	j;
-	int	found_nb;
+int ft_atoi(const char *str) {
+	int res;
+	int modulator;
 
-	i = 0;
-	j = 0;
-	found_nb = 0;
-	while (str[i] != '\0')
-	{
-		if (found_nb == 0 && is_numeric(str[i]) == 1)
-			found_nb = 1;
-		if (found_nb != 0 && is_numeric(str[i]) != 1)
-			break ;
-		if (is_numeric(str[i]) == 1)
-			j++;
-		i++;
+	res = 0;
+	modulator = 1;
+	while(*str && is_space(*str))
+		str++;
+	if((*str == '-' || *str == '+') && !ft_isdigit(*(str + 1)))
+		return (0);
+	if(*str == '-') {
+		modulator = -1;
+		str++;
 	}
-	return (j);
-}
-
-int	multi(int a, int times)
-{
-	int	rs;
-	int	i;
-
-	rs = a;
-	i = 0;
-	while (i < times)
-	{
-		rs *= 10;
-		i++;
+	if(*str == '+')
+		str++;
+	while(*str && ft_isdigit(*str)) {
+		res += *str - 48;
+		if(ft_isdigit(*(str + 1)))
+			res *= 10;
+		str++;
 	}
-	return (rs);
+	return(res * modulator);
 }
-
-void	set_vars_to_zero_stupid(int *a, int *b, int *c, int *d)
-{
-	*a = 0;
-	*b = 0;
-	*c = 0;
-	*d = 0;
-}
-
-int	ft_atoi(const char *str)
-{
-	int	rs;
-	int	i;
-	int	j;
-	int	minuses;
-
-	set_vars_to_zero_stupid(&rs, &i, &j, &minuses);
-	while (str[i] != '\0')
-	{
-		if (rs != 0 && is_numeric(str[i]) != 1)
-			break ;
-		if (str[i] == '-')
-			minuses++;
-		if ((rs == 0 && is_numeric(str[i]) == 0) || minuses > 1 || str[i] == '+')
-			return (0);
-		if (is_numeric(str[i]) == 1)
-		{
-			rs += multi(str[i] - 48, str_len((char *)str) - j - 1);
-			j++;
-		}
-		i++;
-	}
-	if (minuses > 0)
-		rs *= -1;
-	return (rs);
-}
-
-/*
-int	main(void)
-{
-	printf("%d\n", ft_atoi("500"));
-	printf("%d\n", ft_atoi(" -400"));
-	printf("%d\n", ft_atoi("    400"));
-	printf("%d\n", ft_atoi("--500"));
-	printf("%d\n", ft_atoi("-----500"));
-	printf("%d\n", ft_atoi("-500"));
-	printf("%d\n", ft_atoi("-+500"));
-	printf("%d\n", ft_atoi("-a500"));
-	printf("%d\n", ft_atoi("-50a80"));
-	printf("%d\n", ft_atoi("2147483647"));
-	printf("%d\n", ft_atoi("-2147483648"));
-	printf("%d\n", ft_atoi("2147483647"));
-	printf("%d\n", ft_atoi("-2147483648"));
-	return (0);
-}
-*/
