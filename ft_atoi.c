@@ -26,12 +26,11 @@ int ft_atoi(const char *str) {
 		str++;
 	if((*str == '-' || *str == '+') && !ft_isdigit(*(str + 1)))
 		return (0);
-	if(*str == '-') {
-		modulator = -1;
+	if(*str == '-' || *str == '+') {
+		if(*str == '-')
+			modulator = -1;
 		str++;
 	}
-	if(*str == '+')
-		str++;
 	while(*str && ft_isdigit(*str)) {
 		res += *str - 48;
 		if(ft_isdigit(*(str + 1)))
