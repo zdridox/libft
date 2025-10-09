@@ -6,12 +6,11 @@
 /*   By: mzdrodow <mzdrodow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 21:55:06 by mzdrodow          #+#    #+#             */
-/*   Updated: 2025/10/07 19:29:48 by mzdrodow         ###   ########.fr       */
+/*   Updated: 2025/10/09 18:12:44 by mzdrodow         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
-//#include <unistd.h>
-#include <stdlib.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *str)
 {

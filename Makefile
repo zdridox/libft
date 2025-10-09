@@ -13,13 +13,13 @@ HEADERS = libft.h
 OBJ = $(SRC:.c=.o)
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
-all: $(NAME)
-
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
 bonus: $(OBJ) $(BONUS_OBJ)
 	ar rcs $(NAME) $(OBJ) $(BONUS_OBJ)
+
+all: $(NAME) bonus
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@

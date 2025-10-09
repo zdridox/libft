@@ -2,6 +2,6 @@ headery
 wyjebac testery
 wyjebac linijki testeru z makefile
 split wyjebac in word i sprawdzac czy i > 0
-lstmapi
 norminette
 przeleciec przez wszystko klasa benc porzadnie
+dodac jak malloc null to zwroc null

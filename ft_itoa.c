@@ -6,12 +6,11 @@
 /*   By: mzdrodow <mzdrodow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 01:55:20 by mzdrodow          #+#    #+#             */
-/*   Updated: 2025/10/06 01:55:23 by mzdrodow         ###   ########.fr       */
+/*   Updated: 2025/10/09 18:10:56 by mzdrodow         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "libft.h"
-#include <stdlib.h>
 
 //#include <stdio.h>
 

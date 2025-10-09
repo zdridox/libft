@@ -6,11 +6,11 @@
 /*   By: mzdrodow <mzdrodow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 01:57:00 by mzdrodow          #+#    #+#             */
-/*   Updated: 2025/10/07 22:43:11 by mzdrodow         ###   ########.fr       */
+/*   Updated: 2025/10/09 18:11:40 by mzdrodow         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {

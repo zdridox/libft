@@ -6,11 +6,11 @@
 /*   By: mzdrodow <mzdrodow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 02:02:13 by mzdrodow          #+#    #+#             */
-/*   Updated: 2025/10/06 02:02:15 by mzdrodow         ###   ########.fr       */
+/*   Updated: 2025/10/09 18:12:56 by mzdrodow         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int search_char)
 {

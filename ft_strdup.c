@@ -6,11 +6,11 @@
 /*   By: mzdrodow <mzdrodow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 03:12:26 by mzdrodow          #+#    #+#             */
-/*   Updated: 2025/10/06 01:59:52 by mzdrodow         ###   ########.fr       */
+/*   Updated: 2025/10/09 18:12:24 by mzdrodow         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strdup(char *src)
 {

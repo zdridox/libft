@@ -6,14 +6,11 @@
 /*   By: mzdrodow <mzdrodow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 02:02:53 by mzdrodow          #+#    #+#             */
-/*   Updated: 2025/10/06 02:02:58 by mzdrodow         ###   ########.fr       */
+/*   Updated: 2025/10/09 18:13:07 by mzdrodow         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "libft.h"
-#include <stdlib.h>
-
-//#include <stdio.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

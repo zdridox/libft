@@ -6,11 +6,12 @@
 /*   By: mzdrodow <mzdrodow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 02:05:09 by mzdrodow          #+#    #+#             */
-/*   Updated: 2025/10/08 01:36:44 by mzdrodow         ###   ########.fr       */
+/*   Updated: 2025/10/09 18:13:13 by mzdrodow         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include <stdlib.h>
+#include <unistd.h>
 
 typedef struct s_list
 {

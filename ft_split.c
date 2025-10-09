@@ -6,11 +6,11 @@
 /*   By: mzdrodow <mzdrodow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 01:58:47 by mzdrodow          #+#    #+#             */
-/*   Updated: 2025/10/07 22:09:11 by mzdrodow         ###   ########.fr       */
+/*   Updated: 2025/10/09 18:12:17 by mzdrodow         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
-#include <stdlib.h>
+#include "libft.h"
 
 static int	word_counter(char const *s, char c)
 {

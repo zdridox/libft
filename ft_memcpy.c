@@ -6,11 +6,11 @@
 /*   By: mzdrodow <mzdrodow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 01:56:32 by mzdrodow          #+#    #+#             */
-/*   Updated: 2025/10/06 01:56:35 by mzdrodow         ###   ########.fr       */
+/*   Updated: 2025/10/09 18:11:38 by mzdrodow         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {

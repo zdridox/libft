@@ -6,13 +6,11 @@
 /*   By: mzdrodow <mzdrodow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 00:40:08 by mzdrodow          #+#    #+#             */
-/*   Updated: 2025/10/06 02:01:57 by mzdrodow         ###   ########.fr       */
+/*   Updated: 2025/10/09 18:12:53 by mzdrodow         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
-//#include <stdio.h>
 #include "libft.h"
-#include <stdlib.h>
 
 char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {

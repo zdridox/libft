@@ -6,14 +6,11 @@
 /*   By: mzdrodow <mzdrodow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 02:02:28 by mzdrodow          #+#    #+#             */
-/*   Updated: 2025/10/06 02:02:30 by mzdrodow         ###   ########.fr       */
+/*   Updated: 2025/10/09 18:13:02 by mzdrodow         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "libft.h"
-#include <stdlib.h>
-
-//#include <stdio.h>
 
 static int	check_inset(char const *set, char c)
 {
