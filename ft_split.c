@@ -6,7 +6,7 @@
 /*   By: mzdrodow <mzdrodow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 01:58:47 by mzdrodow          #+#    #+#             */
-/*   Updated: 2025/10/09 21:50:35 by mzdrodow         ###   ########.fr       */
+/*   Updated: 2025/10/09 22:33:15 by mzdrodow         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -39,9 +39,9 @@ static int	word_counter(char const *s, char c)
 
 static char	**array_allocate(char const *s, char c)
 {
-	char		**array;
-	int			i;
-	int			index;
+	char	**array;
+	int		index;
+	int		i;
 
 	i = -1;
 	index = 0;
@@ -54,7 +54,8 @@ static char	**array_allocate(char const *s, char c)
 			index++;
 			i = -1;
 		}
-		if (*s != c) {
+		if (*s != c)
+		{
 			i++;
 		}
 		s++;
@@ -66,12 +67,12 @@ static char	**array_allocate(char const *s, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	char		**array;
-	int			index;
-	int			i;
+	char	**array;
+	int		index;
+	int		i;
 
-	index = 0;
 	i = -1;
+	index = 0;
 	array = array_allocate(s, c);
 	while (*s != '\0')
 	{
@@ -81,7 +82,8 @@ char	**ft_split(char const *s, char c)
 			index++;
 			i = -1;
 		}
-		if (*s != c) {
+		if (*s != c)
+		{
 			array[index][i++ + 1] = *s;
 		}
 		s++;

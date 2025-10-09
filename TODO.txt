@@ -1,8 +1,8 @@
 headery
 wyjebac testery
 wyjebac linijki testeru z makefile
-split wyjebac in word i sprawdzac czy i > 0
+split chyba trzeba dodac sprawdzanie null na malloc
 norminette
 przeleciec przez wszystko klasa benc porzadnie
 dodac jak malloc null to zwroc null
-w lstmap sprawdz czy nowy element nie jest null jak jest to clear new list cale i return NULL
+lstmap popraw bo 4 llinijki za duzo i wgl sraka 
