@@ -48,7 +48,7 @@ static char	**array_allocate(char const *s, char c)
 	array = malloc((word_counter(s, c) + 1) * sizeof(char *));
 	if(!array)
 		return (NULL);
-	while (*s)
+	while (*s != '\0')
 	{
 		if (*s != c)
 			i++;
