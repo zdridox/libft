@@ -46,22 +46,21 @@ static char	**array_allocate(char const *s, char c)
 	i = -1;
 	index = 0;
 	array = malloc((word_counter(s, c) + 1) * sizeof(char *));
-	while (*s != '\0')
+	if(!array)
+		return (NULL);
+	while (*s)
 	{
-		if (*s == c && i != -1)
+		if (*s != c)
+			i++;
+		if ((*s == c && i != -1) || (*(s + 1) == '\0' && i != -1))
 		{
 			array[index] = malloc(i + 2);
-			index++;
+			if(!array[index++])
+				return (NULL);
 			i = -1;
-		}
-		if (*s != c)
-		{
-			i++;
 		}
 		s++;
 	}
-	if (i != -1)
-		array[index] = malloc(i + 2);
 	return (array);
 }
 
@@ -74,19 +73,20 @@ char	**ft_split(char const *s, char c)
 	i = -1;
 	index = 0;
 	array = array_allocate(s, c);
-	while (*s != '\0')
+	if(array == NULL)
+		return (NULL);
+	while (*s++ != '\0')
 	{
-		if (*s == c && i != -1)
+		if (*(s - 1) == c && i != -1)
 		{
 			array[index][i + 1] = '\0';
 			index++;
 			i = -1;
 		}
-		if (*s != c)
+		if (*(s - 1) != c)
 		{
-			array[index][i++ + 1] = *s;
+			array[index][i++ + 1] = *(s - 1);
 		}
-		s++;
 	}
 	if (i != -1)
 		array[index++][i + 1] = '\0';
