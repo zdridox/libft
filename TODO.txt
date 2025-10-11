@@ -4,3 +4,4 @@ wyjebac linijki testeru z makefile
 norminette
 przeleciec przez wszystko klasa benc porzadnie
 dodac jak malloc null to zwroc null
+trim do splita
