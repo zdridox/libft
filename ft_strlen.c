@@ -6,7 +6,7 @@
 /*   By: mzdrodow <mzdrodow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 21:55:06 by mzdrodow          #+#    #+#             */
-/*   Updated: 2025/10/09 21:20:38 by mzdrodow         ###   ########.fr       */
+/*   Updated: 2025/10/11 19:25:00 by mzdrodow         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -16,6 +16,8 @@ size_t	ft_strlen(const char *str)
 {
 	size_t	i;
 
+	if(!str)
+		return (0);
 	i = 0;
 	while (str[i])
 		i++;

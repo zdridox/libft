@@ -6,7 +6,7 @@
 /*   By: mzdrodow <mzdrodow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 02:02:28 by mzdrodow          #+#    #+#             */
-/*   Updated: 2025/10/11 18:25:37 by mzdrodow         ###   ########.fr       */
+/*   Updated: 2025/10/11 19:07:58 by mzdrodow         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -61,22 +61,17 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		end;
 	int		i;
 
+	if (!s1)
+		return (NULL);
+	if(!set)
+		return (ft_strdup((char *)s1));
 	i = 0;
 	start = get_start(s1, set);
 	end = get_end(s1, set);
-	if (end == start)
-	{
-		res = malloc(2);
-		if(!res)
-			return (NULL);
-		res[0] = s1[start];
-		res[1] = '\0';
-		return (res);
-	}
 	if (end < start)
 		return (ft_strdup(""));
 	res = malloc(end - start + 2);
-	if(!res)
+	if (!res)
 		return (NULL);
 	while (i++ < (end - start + 1))
 		res[i - 1] = s1[start + (i - 1)];

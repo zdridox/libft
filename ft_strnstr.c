@@ -6,33 +6,35 @@
 /*   By: mzdrodow <mzdrodow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 00:40:08 by mzdrodow          #+#    #+#             */
-/*   Updated: 2025/10/09 18:12:53 by mzdrodow         ###   ########.fr       */
+/*   Updated: 2025/10/11 19:35:59 by mzdrodow         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *str, const char *to_find, size_t len)
+char *ft_strnstr(const char *str, const char *to_find, size_t len)
 {
-	size_t	i;
-	size_t	j;
+    size_t i;
+    size_t j;
+    size_t to_find_len;
 
-	i = 0;
-	if (to_find[0] == 0)
-		return ((char *)str);
-	while (str[i] && i < len)
-	{
-		j = 0;
-		while (to_find[j] && str[i + j] == to_find[j] && i + j < len)
-		{
-			j++;
-		}
-		if (ft_strlen(to_find) == j)
-			return ((char *)&str[i]);
-		i++;
-	}
-	return (0);
+    if (!*to_find)
+        return ((char *)str);
+
+    to_find_len = ft_strlen(to_find);
+    i = 0;
+    while (i < len && str[i])
+    {
+        j = 0;
+        while (i + j < len && str[i + j] && str[i + j] == to_find[j])
+            j++;
+        if (j == to_find_len)
+            return ((char *)&str[i]);
+        i++;
+    }
+    return (NULL);
 }
+
 
 // int main()
 //{

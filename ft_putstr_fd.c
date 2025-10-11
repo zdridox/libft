@@ -6,7 +6,7 @@
 /*   By: mzdrodow <mzdrodow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 01:58:23 by mzdrodow          #+#    #+#             */
-/*   Updated: 2025/10/09 18:12:10 by mzdrodow         ###   ########.fr       */
+/*   Updated: 2025/10/11 18:54:44 by mzdrodow         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -14,6 +14,8 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
+	if(!s)
+		return;
 	while (*s)
 	{
 		write(fd, &*s, 1);

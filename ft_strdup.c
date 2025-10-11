@@ -6,7 +6,7 @@
 /*   By: mzdrodow <mzdrodow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 03:12:26 by mzdrodow          #+#    #+#             */
-/*   Updated: 2025/10/09 18:12:24 by mzdrodow         ###   ########.fr       */
+/*   Updated: 2025/10/11 19:24:04 by mzdrodow         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -23,6 +23,8 @@ char	*ft_strdup(char *src)
 	while (src[size] != '\0')
 		size++;
 	dup = malloc(size + 1);
+	if (!dup)
+		return (NULL);
 	while (src[i] != '\0')
 	{
 		dup[i] = src[i];

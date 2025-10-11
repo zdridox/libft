@@ -25,7 +25,7 @@ all: $(NAME) bonus
 	$(CC) $(CFLAGS) -c $< -o $@
 
 breaker:
-	$(CC) -nostartfiles -shared -fPIC -ldl $(CFLAGS) -o libft.so $(SRC) $(BONUS_SRC)
+	$(CC) -nostartfiles -shared -fPIC -ldl $(CFLAGS) -o libft.so $(SRC)
 
 clean:
 	rm -f $(OBJ) $(BONUS_OBJ) $(TESTBIN)
