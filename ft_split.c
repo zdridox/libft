@@ -37,7 +37,7 @@ static int	word_counter(char const *s, char c)
 	return (word_count);
 }
 
-static void *free_array(char **array, int n)
+static void	free_array(char **array, int n)
 {
     int i;
     
@@ -48,7 +48,6 @@ static void *free_array(char **array, int n)
         i++;
     }
     free(array);
-    return (NULL);
 }
 
 static char	**array_allocate(char const *s, char c)
@@ -70,7 +69,7 @@ static char	**array_allocate(char const *s, char c)
 		{
 			array[index] = malloc(i + 2);
 			if(!array[index++])
-				return (free_array(array, index - 1));
+				return (free_array(array, index - 1), NULL);
 			i = -1;
 		}
 		s++;
@@ -86,6 +85,8 @@ char	**ft_split(char const *s, char c)
 
 	i = -1;
 	index = 0;
+	if(!s)
+		return (NULL);
 	array = array_allocate(s, c);
 	if(array == NULL)
 		return (NULL);
