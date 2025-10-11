@@ -70,7 +70,7 @@ static char	**array_allocate(char const *s, char c)
 		{
 			array[index] = malloc(i + 2);
 			if(!array[index++])
-				return (free_array(array, index));
+				return (free_array(array, index - 1));
 			i = -1;
 		}
 		s++;
