@@ -25,7 +25,7 @@ all: $(NAME) bonus
 	$(CC) $(CFLAGS) -c $< -o $@
 
 breaker:
-	$(CC) -nostartfiles -shared -fPIC -ldl $(CFLAGS) -o libft.so $(SRC) $(SRCBONUS)
+	$(CC) -nostartfiles -shared -fPIC -ldl $(CFLAGS) -o libft.so $(SRC) $(BONUS_SRC)
 
 clean:
 	rm -f $(OBJ) $(BONUS_OBJ) $(TESTBIN)
@@ -34,4 +34,4 @@ fclean: clean
 	rm -f $(NAME) $(TESTBIN)
 re: fclean all
 
-.PHONY: clean fclean
+.PHONY: clean fclean bonus

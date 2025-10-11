@@ -6,7 +6,7 @@
 /*   By: mzdrodow <mzdrodow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 02:00:19 by mzdrodow          #+#    #+#             */
-/*   Updated: 2025/10/09 18:12:30 by mzdrodow         ###   ########.fr       */
+/*   Updated: 2025/10/11 18:18:42 by mzdrodow         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -21,6 +21,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	buffer = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if(!buffer)
+		return (NULL);
 	while (*s1)
 	{
 		buffer[i] = *s1;

@@ -6,7 +6,7 @@
 /*   By: mzdrodow <mzdrodow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 02:02:53 by mzdrodow          #+#    #+#             */
-/*   Updated: 2025/10/09 18:13:07 by mzdrodow         ###   ########.fr       */
+/*   Updated: 2025/10/11 18:40:33 by mzdrodow         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -21,12 +21,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	if (start > ft_strlen(s))
-		return (ft_memset(malloc(1), 0, 1));
+		return (ft_strdup(""));
 	if (len > ft_strlen(s) - start)
 		len = ft_strlen(s) - start;
 	p = s;
 	p += start;
 	buffer = malloc(len + 1);
+	if (!buffer)
+		return (NULL);
 	b = buffer;
 	while (len > 0)
 	{

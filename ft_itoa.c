@@ -6,7 +6,7 @@
 /*   By: mzdrodow <mzdrodow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 01:55:20 by mzdrodow          #+#    #+#             */
-/*   Updated: 2025/10/09 18:10:56 by mzdrodow         ###   ########.fr       */
+/*   Updated: 2025/10/11 18:14:04 by mzdrodow         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -65,6 +65,8 @@ char	*ft_itoa(int n)
 		return (ft_strdup("-2147483648"));
 	size = digit_sum(n);
 	result = malloc(size + 1);
+	if (!result)
+		return (NULL);
 	if (n < 0)
 	{
 		result[size - 1] = '-';
@@ -76,9 +78,7 @@ char	*ft_itoa(int n)
 		n /= 10;
 		i++;
 	}
-	result[size] = '\0';
-	rev_str(result);
-	return (result);
+	return (result[size] = '\0' ,rev_str(result));
 }
 
 /*
