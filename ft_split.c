@@ -75,20 +75,19 @@ char	**ft_split(char const *s, char c)
 	array = array_allocate(s, c);
 	if(array == NULL)
 		return (NULL);
-	while (*s++ != '\0')
+	while (*s != '\0')
 	{
-		if (*(s - 1) == c && i != -1)
+		if (*s != c)
+		{
+			array[index][i++ + 1] = *s;
+		}
+		if ((*s == c && i != -1) || (*(s + 1) == '\0' && i != -1))
 		{
 			array[index][i + 1] = '\0';
 			index++;
 			i = -1;
 		}
-		if (*(s - 1) != c)
-		{
-			array[index][i++ + 1] = *(s - 1);
-		}
+		s++;
 	}
-	if (i != -1)
-		array[index++][i + 1] = '\0';
 	return (array[index] = NULL, array);
 }
