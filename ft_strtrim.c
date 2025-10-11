@@ -1,15 +1,3 @@
-/******************************************************************************/
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mzdrodow <mzdrodow@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/06 02:02:28 by mzdrodow          #+#    #+#             */
-/*   Updated: 2025/10/11 19:07:58 by mzdrodow         ###   ########.fr       */
-/*                                                                            */
-/******************************************************************************/
-
 #include "libft.h"
 
 static int	check_inset(char const *set, char c)
@@ -63,7 +51,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	if (!s1)
 		return (NULL);
-	if(!set)
+	if (!set)
 		return (ft_strdup((char *)s1));
 	i = 0;
 	start = get_start(s1, set);

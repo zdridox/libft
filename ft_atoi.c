@@ -1,16 +1,5 @@
-/******************************************************************************/
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mzdrodow <mzdrodow@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/07 22:16:25 by mzdrodow          #+#    #+#             */
-/*   Updated: 2025/10/07 22:17:14 by mzdrodow         ###   ########.fr       */
-/*                                                                            */
-/******************************************************************************/
-
 #include "libft.h"
+
 
 static int	is_space(char a)
 {
@@ -19,8 +8,8 @@ static int	is_space(char a)
 
 int	ft_atoi(const char *str)
 {
-	int	res;
-	int	modulator;
+	int res;
+	int modulator;
 
 	res = 0;
 	modulator = 1;

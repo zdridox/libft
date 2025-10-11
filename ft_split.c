@@ -1,15 +1,3 @@
-/******************************************************************************/
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mzdrodow <mzdrodow@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/06 01:58:47 by mzdrodow          #+#    #+#             */
-/*   Updated: 2025/10/09 22:33:15 by mzdrodow         ###   ########.fr       */
-/*                                                                            */
-/******************************************************************************/
-
 #include "libft.h"
 
 static int	word_counter(char const *s, char c)
@@ -39,15 +27,15 @@ static int	word_counter(char const *s, char c)
 
 static void	free_array(char **array, int n)
 {
-    int i;
-    
-    i = 0;
-    while (i < n)
-    {
-        free(array[i]);
-        i++;
-    }
-    free(array);
+	int	i;
+
+	i = 0;
+	while (i < n)
+	{
+		free(array[i]);
+		i++;
+	}
+	free(array);
 }
 
 static char	**array_allocate(char const *s, char c)
@@ -59,7 +47,7 @@ static char	**array_allocate(char const *s, char c)
 	i = -1;
 	index = 0;
 	array = malloc((word_counter(s, c) + 1) * sizeof(char *));
-	if(!array)
+	if (!array)
 		return (NULL);
 	while (*s != '\0')
 	{
@@ -68,7 +56,7 @@ static char	**array_allocate(char const *s, char c)
 		if ((*s == c && i != -1) || (*(s + 1) == '\0' && i != -1))
 		{
 			array[index] = malloc(i + 2);
-			if(!array[index++])
+			if (!array[index++])
 				return (free_array(array, index - 1), NULL);
 			i = -1;
 		}
@@ -85,10 +73,10 @@ char	**ft_split(char const *s, char c)
 
 	i = -1;
 	index = 0;
-	if(!s)
+	if (!s)
 		return (NULL);
 	array = array_allocate(s, c);
-	if(array == NULL)
+	if (array == NULL)
 		return (NULL);
 	while (*s != '\0')
 	{
