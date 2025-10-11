@@ -83,8 +83,7 @@ char	**ft_split(char const *s, char c)
 		}
 		if ((*s == c && i != -1) || (*(s + 1) == '\0' && i != -1))
 		{
-			array[index][i + 1] = '\0';
-			index++;
+			array[index++][i + 1] = '\0';
 			i = -1;
 		}
 		s++;
