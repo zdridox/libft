@@ -1,6 +1,16 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mzdrodow <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/03 13:16:03 by mzdrodow          #+#    #+#             */
+/*   Updated: 2025/11/03 13:16:05 by mzdrodow         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-//#include <stdio.h>
+#include "libft.h"
 
 static int	digit_sum(int n)
 {
@@ -69,23 +79,36 @@ char	*ft_itoa(int n)
 	return (result[size] = '\0', rev_str(result));
 }
 
-/*
-int	main(void) {
-	printf("digit sum of 6789421: %d\n", digit_sum(6789421));
-	printf("digit sum of -6789421: %d\n", digit_sum(-6789421));
-	printf("digit sum of 0: %d\n", digit_sum(0));
-	printf("digit sum of 1: %d\n", digit_sum(1));
-	char str1[] = "dupa";
-	char str2[] = "ptaka";
-	printf("reversed str 'dupa': %s\n", rev_str(str1));
-	printf("reversed str 'ptaka': %s\n", rev_str(str2));
-	printf("itoa 5684213: %s\n", ft_itoa(5684213));
-	printf("itoa -5684213: %s\n", ft_itoa(-5684213));
-	printf("itoa 500: %s\n", ft_itoa(500));
-	printf("itoa -500: %s\n", ft_itoa(-500));
-	printf("itoa 2147483647: %s\n", ft_itoa(2147483647));
-	printf("itoa -2147483648: %s\n", ft_itoa(-2147483648));
-	printf("itoa 0: %s\n", ft_itoa(0));
-	return (0);
+static int	u_digit_sum(unsigned int n)
+{
+	int	i;
+
+	i = 0;
+	if (n == 0)
+		return (1);
+	while (n > 0)
+	{
+		i++;
+		n /= 10;
+	}
+	return (i);
 }
-*/
+
+char	*unsigned_itoa(unsigned int num)
+{
+	char	*str;
+	int		d_sum;
+	int		i;
+
+	d_sum = u_digit_sum(num);
+	str = malloc(d_sum + 1);
+	i = d_sum - 1;
+	while (i != -1)
+	{
+		str[i] = num % 10 + 48;
+		num /= 10;
+		i--;
+	}
+	str[d_sum] = '\0';
+	return (str);
+}

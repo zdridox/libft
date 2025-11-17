@@ -10,6 +10,7 @@
 /*                                                                            */
 /******************************************************************************/
 
+#include <stdarg.h>
 #include <stdlib.h>
 #include <unistd.h>
 
@@ -64,3 +65,12 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
+int		putnbr(int nbr);
+int		putunbr(unsigned int nbr);
+int		putstr(char *str);
+char	*unsigned_itoa(unsigned int num);
+int		ft_printf(const char *str, ...);
+char	*int_to_hex(unsigned long num, int type);
+int		char_index(char *str, char c);
+int		printpointer(void *p);
+int		puthex(unsigned long num, int type);
